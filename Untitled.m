@@ -6,7 +6,8 @@ function dy = Untitled(t,y)
     T=0.5;
     SIGMA=sqrt(2*(a/(1+a^2))*k*T/(sqrt(y(1).^2 + y(2).^2 + y(3).^2)));
     MU = 0;
-
+    
+    %нужно получить список Rx,Ry,Rz, а точнее сделать так, чтобы я мог их использовать в скрипте
     Rx = normrnd(MU,SIGMA);
     Ry = normrnd(MU,SIGMA);
     Rz = normrnd(MU,SIGMA);
