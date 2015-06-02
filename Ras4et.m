@@ -1,6 +1,21 @@
 options = odeset('RelTol',1e-5,'AbsTol',[1e-4 1e-4 1e-4]);
 
-[T,Y] = ode45(@Untitled,[0 5],[0.86023252670426267717294735350497 0.5 0.1],options);
+global random_var_Rx;
+global random_var_Ry;
+global random_var_Rz;
+global span;
+
+start_time = 0;
+end_time = 5;
+
+span = start_time:0.01:end_time;
+random_var_Rx = [];
+random_var_Ry = [];
+random_var_Rz = [];
+
+[T,Y] = ode45(@Untitled, span, [0.86023252670426267717294735350497 0.5 0.1],options);
+
+
 k=-2;
 k1 = -7;
 k2 = 5;
@@ -37,3 +52,7 @@ figure
 plot(Y(:,2))
 figure
 plot(sqrt(Y(:,2).^2 + Y(:,1).^2 + Y(:,3).^2))
+
+size(random_var)
+
+%random_var

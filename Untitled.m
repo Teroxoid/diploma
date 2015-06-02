@@ -11,7 +11,21 @@ function dy = Untitled(t,y)
     Rx = normrnd(MU,SIGMA);
     Ry = normrnd(MU,SIGMA);
     Rz = normrnd(MU,SIGMA);
-
+    
+    global random_var_Rx;
+    global random_var_Ry;
+    global random_var_Rz;
+    global span;
+    
+    
+    % Nearest neighbour
+    [~, position] = min(abs(span - t));
+    
+    
+    random_var_Rx(position) = Rx;
+    random_var_Ry(position) = Ry;
+    random_var_Rz(position) = Rz;
+    
 
     Bx=Rx;
     By=Ry+5;
